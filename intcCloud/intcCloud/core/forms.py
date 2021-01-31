@@ -6,9 +6,9 @@ from .models import DiplomaDocument
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-        fields = ('documentName', 'documentName2', 'cycleType', 'studyGroup', 'teacherName', 'documentType', 'document')
+        fields = ('documentName', 'documentName2', 'cycleType', 'studyGroup', 'teacherName', 'documentType', 'year', 'document')
 
 class DiplomaForm(forms.ModelForm):
     class Meta:
         model = DiplomaDocument
-        fields = ('speciality', 'qualification', 'group','theme', 'student', 'document')
+        fields = ('speciality', 'qualification', 'group','theme', 'student', 'year', 'document')

@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 
 
@@ -8,6 +9,8 @@ class Document(models.Model):
     studyGroup = models.CharField("<b>Группа </b>", max_length=255, default="")
     teacherName = models.CharField("<b>ФИО преподавателя </b>",max_length=255)
     documentType = models.CharField("<b>Тип документа </b>",max_length=100)
+    year = models.CharField("<b>Учебный год </b>",max_length=100, default="")
+    postDate = models.DateField(("Date"), default=datetime.date.today)
     document = models.FileField("<b>Файл </b>",upload_to='documents/files')
 
     def __str__(self):
@@ -23,6 +26,8 @@ class DiplomaDocument(models.Model):
     group = models.CharField("<b>Группа </b>", max_length=255, default="")
     theme = models.CharField("<b>Тема дипломного проекта </b>", max_length=255, default="")
     student = models.CharField("<b>ФИО студента </b>", max_length=255, default="")
+    year = models.CharField("<b>Учебный год </b>",max_length=100, default="")
+    postDate = models.DateField(("Date"), default=datetime.date.today)
     document = models.FileField("<b>Файл </b>",upload_to='documents/files')
 
     def __str__(self):
